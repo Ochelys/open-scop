@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  db:
+    image: postgres:13.0
+    ports:
+      - 15432:5432
+    environment:
+      - POSTGRES_USER=open_scope_development
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
