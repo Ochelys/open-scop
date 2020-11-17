@@ -9,5 +9,9 @@
 require 'faker'
 
 5.times do
-    Company.create([{name: Faker::name, nominal_share_value: Faker::Number.number(digits: 3)}])
+    Company.create([{name: Faker::Name.last_name, nominal_share_value: Faker::Number.number(digits: 3)}])
+end
+
+20.times do
+    Partner.create([{name: Faker::Name.last_name, company_id: Faker::Number.between(from: 1, to: 4)}])
 end

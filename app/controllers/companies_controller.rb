@@ -1,6 +1,5 @@
 class CompaniesController < ApplicationController
   def index
-    @company = Company.find(1)
   end
 
   def show
