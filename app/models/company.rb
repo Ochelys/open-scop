@@ -1,4 +1,5 @@
-class Partner < ActiveRecord::Base
+class Company < ActiveRecord::Base
     has_many :Partner
+    validate :name
     
 end
