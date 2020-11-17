@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row border-bottom mb-4">
+        Historique
+    </div>
+    <div class="row">
+        <table class="table table-responsive text-white table-stripe">
+            <thead>
+                <tr scope="row">
+                    <th class="col-1">Date</th>
+                    <th class="col-1">Associé</th>
+                    <th class="col-8">Motif</th>
+                    <th class="col-1">Part</th>
+                    <th class="col-1">Montant</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @share_movements.each do |sm| %>
+                    <tr scope="row">
+                        <td><%= sm.done_at %></td>
+                        <td><%= @partners.find(sm.partner_id).name %></td>
+                        <td><%= sm.description %></td>
+                        <td><%= sm.quantity %></td>
+                        <td><%= sm.quantity*@company.nominal_share_value %> €</td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
