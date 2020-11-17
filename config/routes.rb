@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
   get 'partners/index'
   get 'partners/show'
   get 'partners/new'
