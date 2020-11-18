@@ -40,9 +40,9 @@
                     <% @partners.each do |partner| %>
                         <tr>
                             <td><%= partner.name %></td>
-                            <td>Part</td>
-                            <td>%</td>
-                            <td>Montant</td>
+                            <td><%= partner.shares?%></td>
+                            <td><%= partner.percent %> %</td>
+                            <td><%= partner.shares?*@company.nominal_share_value%> €</td>
                         </tr>
                     <% end %>
                 </tbody>
