@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col border-right border-bottom">
                     <div class="row">Capital</div>
-                    <div class="row">Capital</div>
+                    <div class="row"><%= @company.shares? * @company.nominal_share_value %> €</div>
                 </div>
                 <div class="col border-left border-bottom">
                     <div class="row">Assosié</div>
@@ -17,11 +17,11 @@
             <div class="row">
                 <div class="col border-right border-top">
                     <div class="row">Parts</div>
-                    <div class="row">Parts</div>
+                    <div class="row"><%= @company.shares? %></div>
                 </div>
                 <div class="col border-left border-top">
                     <div class="row">Valeur des parts</div>
-                    <div class="row"><%= @company.nominal_share_value%></div>
+                    <div class="row"><%= @company.nominal_share_value%> €</div>
                 </div>
             </div>
         </div>

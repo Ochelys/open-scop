@@ -7,6 +7,6 @@ class Partner < ActiveRecord::Base
     end
 
     def percent
-      ShareMovement.where(partner_id: self.id).sum(:quantity)*100/ShareMovement.all.sum(:quantity)
+      ShareMovement.where(partner_id: self.id).sum(:quantity)*100/ Company.find(self.company_id).shares?
     end
 end
