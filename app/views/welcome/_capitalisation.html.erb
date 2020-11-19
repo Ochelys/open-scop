@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row border-bottom mb-4">
+    Capitalisation
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col border-right border-bottom">
+                    <div class="row">Capital</div>
+                    <div class="row"><%= @company.shares? * @company.nominal_share_value %> €</div>
+                </div>
+                <div class="col border-left border-bottom">
+                    <div class="row">Assosié</div>
+                    <div class="row"><%= @partners.count %></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border-right border-top">
+                    <div class="row">Parts</div>
+                    <div class="row"><%= @company.shares? %></div>
+                </div>
+                <div class="col border-left border-top">
+                    <div class="row">Valeur des parts</div>
+                    <div class="row"><%= @company.nominal_share_value%> €</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Associé</th>
+                        <th>Part</th>
+                        <th>%</th>
+                        <th>Montant</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @partners.each do |partner| %>
+                        <tr>
+                            <td><%= partner.name %></td>
+                            <td><%= partner.shares?%></td>
+                            <td><%= partner.percent %> %</td>
+                            <td><%= partner.shares?*@company.nominal_share_value%> €</td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
